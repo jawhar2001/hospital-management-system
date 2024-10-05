@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 500;
+}
+.logo .logo-span-1 {
+  color: #fff;
+}
+.logo .logo-span-2 {
+  color: #54b3df;
+}
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #00547a;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 10px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.primary-btn {
+  background-color: #54b3df;
+  margin-left: 30px;
+  border-radius: 10px;
+}
+
+/* hero section */
+.hero {
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 10px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-container-left {
+  flex: 4;
+}
+.hero-container-left h1 {
+  font-size: 48px;
+}
+.hero-container-left p {
+  margin: 20px 0;
+}
+.hero-container-right {
+  flex: 3;
+}
+.hero-container-right img {
+  width: 100%;
+}
+.make-appoinment-btn {
+  padding: 10px 20px;
+  border: 0;
+  background: #00547a;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input-field {
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.about-page-container,
+.contact-page-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 10px;
+  min-height: calc(100vh - 95px);
+}
+
+.services-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0px 10px;
+  margin-bottom: 40px;
+
+  display: grid;  
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.footer {
+  background-color: #222;
+  color: #f4f4f4;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.appointment-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-form div input, select, textarea {
+  padding: 10px 20px;
+
+}
