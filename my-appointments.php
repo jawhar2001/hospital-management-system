@@ -1,9 +1,9 @@
 <?php
-session_start(); 
+session_start();
 
 include './includes/db.inc.php';
 
-if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
+if (!isset($_SESSION['email'])) {
     header("Location: index.php");
     exit();
 }
@@ -15,7 +15,7 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System | Users</title>
+    <title>Hospital Management System | Appointments</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -23,23 +23,25 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
     <?php include "./partials/navbar.php"; ?>
 
     <div class="contact-page-container">
-        <h1 style="display: block; margin-bottom: 30px;">Users</h1>
+        <h1 style="display: block; margin-bottom: 30px;">All Appointments</h1>
 
         <div>
             <table>
                 <tr>
                     <th>Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Username</th>
-                    <th>Role</th>
-                    <th>Role</th>
+                    <th>Appointment Date</th>
+                    <th>Doctor</th>
+                    <th>Specialty</th>
+                    <th>Reason</th>
                 </tr>
 
                 <?php
 
-                $query = "SELECT * FROM users";
+                $query = "SELECT appointments.*, doctors.name as doctor_name, users.*
+                            FROM appointments 
+                            INNER JOIN users ON appointments.user_id = users.id
+                            INNER JOIN doctors ON appointments.doctor = doctors.id
+                            WHERE appointments.user_id = " . $_SESSION['user_id'];
 
                 $result = mysqli_query($conn, $query);
 
@@ -50,19 +52,17 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
 
                         <tr>
                             <td><?= $row['id']; ?></td>
-                            <td><?= $row['firstName']; ?></td>
-                            <td><?= $row['lastName']; ?></td>
-                            <td><?= $row['email']; ?></td>
-                            <td><?= $row['username']; ?></td>
-                            <td><?= $row['role']; ?></td>
-                            <td><button>Delete</button> <button>Update</button></td>
+                            <td><?= $row['appointment_date']; ?></td>
+                            <td><?= $row['doctor_name']; ?></td>
+                            <td><?= $row['specialty']; ?></td>
+                            <td><?= $row['reason']; ?></td>
                         </tr>
 
                 <?php
 
                     }
                 } else {
-                    echo '0 Rows';
+                    echo 'No appointments found.';
                 }
                 mysqli_close($conn);
 
@@ -73,6 +73,7 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
     </div>
 
     <?php include "./partials/footer.php"; ?>
+</body>
 </body>
 
 </html>

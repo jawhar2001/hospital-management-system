@@ -162,12 +162,35 @@ tr:nth-child(even) {
   gap: 20px;
 }
 
-.appointment-form div {
+.input-group {
   display: flex;
   flex-direction: column;
 }
 
+.input-row {
+  display: flex;
+  gap: 20px;
+}
+
+.input-row > div {
+  flex: 1;
+}
+
+.input-row select {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .appointment-form div input, select, textarea {
   padding: 10px 20px;
+}
 
+.appointment-btn {
+  padding: 10px 20px;
+  border: 0;
+  background-color: #54b3df;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
 }

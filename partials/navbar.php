@@ -20,6 +20,8 @@
                 <a href="index.php">Home</a>
                 <a href="contact.php">Contact</a>
                 <a href="about.php">About</a>
+                <a href="all-appointments.php">All Appointment</a>
+                <a href="my-appointments.php">My Appointment</a>
                 <a href="appointments.php">Appointment</a>
                 <a href="doctors.php">Doctors</a>
                 <a href="users.php">Users</a>
