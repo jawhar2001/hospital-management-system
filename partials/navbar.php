@@ -23,13 +23,14 @@
                     <a href="users.php">Users</a>
                     <a href="signout.php" class="primary-btn">Sign out</a>
                 </div>
-        <?php
+                <?php
             } else {
-        ?>
+                ?>
                 <div class="nav-links">
                     <a href="index.php">Home</a>
                     <a href="contact.php">Contact</a>
                     <a href="about.php">About</a>
+                    <a href="doctors.php">Doctors</a>
                     <a href="my-appointments.php">My Appointments</a>
                     <a href="signout.php" class="primary-btn">Sign out</a>
                 </div>
