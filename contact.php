@@ -22,10 +22,10 @@ session_start();
 
         <div>
             <div>
-                <p>Address   : No.02, Queen Mary's Rd, Galle, Sri Lanka.</p>
-                <p>Contact No: +94 76 1234 782</p>
-                <p>Email     : hopewellhospital@gmail.com</p>
-                <p>Whatsapp  : Watsapp.com</p>
+                <p> &#128205; Address   : No.02, Queen Mary's Rd, Galle, Sri Lanka.</p>
+                <p> &#9742; Contact No: +94 76 1234 782</p>
+                <p> &#9993; Email     : hopewellhospital@gmail.com</p>
+                <p> &#128241; Whatsapp  : Watsapp.com</p>
             </div>
         </div>
     </div>

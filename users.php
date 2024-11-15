@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 
 include './includes/db.inc.php';
 
@@ -55,7 +55,11 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
                             <td><?= $row['email']; ?></td>
                             <td><?= $row['username']; ?></td>
                             <td><?= $row['role']; ?></td>
-                            <td><button>Delete</button> <button>Update</button></td>
+                            <td>
+                                <!-- <button id="deleteBtn" onclick="deleteUser(<?= $row['id']; ?>)">Delete</button> -->
+                                <button id="deleteBtn" onclick="createModal()">Delete</button>
+                                <button>Update</button>
+                            </td>
                         </tr>
 
                 <?php
@@ -73,6 +77,34 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
     </div>
 
     <?php include "./partials/footer.php"; ?>
+
+    <script>
+        const modal = document.querySelector(".modal")
+
+        function closeModal() {
+        }
+
+        function openModal() {
+
+        }
+
+        function deleteUser(id) {
+            fetch(`delete-user.php?id=${id}`).then(console.log(res)).catch(console.log)
+        }
+    </script>
+
+    <div class="modal">
+        <div class="overlay"></div>
+        <div class="content">
+            <h3>Are you sure you want to delete this user ?</h3>
+
+            <div>
+                <button>Cancel</button>
+                <button style="background-color: red; color: white;">Confirm</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

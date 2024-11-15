@@ -24,32 +24,23 @@ session_start();
 
         <b style="margin-top: 20px; display: block;">Our Mission</b>
 
-        <p>At HMS, our mission is to revolutionize healthcare management through innovative, user-friendly technology. We are dedicated to improving the efficiency of hospital operations, elevating patient care, and empowering healthcare professionals with the tools they need to succeed. Our solutions are designed to foster a more connected, coordinated, and compassionate healthcare environment.
+        <p>At HopeWell Hospital system, our mission is to modernize healthcare management through innovative, user-friendly technology. Our solutions are designed to foster a more connected, coordinated, and compassionate healthcare environment.
         </p>
         <b style="margin-top: 20px; display: block;">What We Do</b>
 
-        <p>Our comprehensive Hospital Management System integrates various aspects of hospital operations into a single, cohesive platform. Our system is engineered to support:</p>
+        <p>This software is designed to streamline and simplify hospital operations, ensuring efficient patient care and seamless administrative processes. Key features include:</p>
 
-        <p>Patient Management: From registration and scheduling to treatment tracking and discharge, our system ensures a smooth, efficient process for both patients and healthcare providers.
-            Clinical Management: Streamline clinical workflows with our advanced tools for electronic health records (EHR), lab results, and medical imaging.
-            Financial Management: Simplify billing, insurance claims, and financial reporting with our robust financial management features.
-            Staff Management: Manage schedules, payroll, and performance evaluations with ease, enhancing staff coordination and productivity.
-            Inventory Management: Keep track of medical supplies, pharmaceuticals, and equipment to maintain optimal stock levels and reduce waste.
-            Why Choose Us?</p>
+        <p> &bull; Patient Registration: A user-friendly interface for recording patient information quickly and accurately.</p>
 
-        <p>Innovative Technology: Our system utilizes cutting-edge technology to deliver a reliable, secure, and intuitive user experience.
-            Customization: Tailor our solutions to fit the unique needs of your hospital, ensuring that you get exactly what you need to operate effectively.
-            Support: Our dedicated support team is available around the clock to assist with any questions or issues, ensuring that your system runs smoothly at all times.
-            Compliance: We adhere to the highest standards of data security and regulatory compliance, protecting sensitive patient information and maintaining the integrity of your operations.
-            Our Vision
+        <p> &bull; Appointment Scheduling: A strong scheduler to manage patient appointments and doctor availability, reducing waiting times and maximizing resource usage.
         </p>
-        <p>We envision a future where healthcare management is seamlessly integrated, patient care is optimized, and administrative burdens are minimized. By leveraging technology, we aim to create a more efficient and compassionate healthcare system that benefits everyone involved.
+        <p> &bull; Doctor Details: Comprehensive profiles for medical professionals, including specialties, schedules, and contact information.
         </p>
-        <p>Thank you for considering [Hospital Management System]. We look forward to partnering with you to transform healthcare management and deliver exceptional patient care.
+        <p>Thank you for considering HopeWell Hospital. We look forward to partnering with you to transform healthcare management and deliver exceptional patient care.
         </p>
         <b style="margin-top: 20px; display: block;">Contact Us</b>
 
-        <p>For more information or to schedule a demo, please contact us at +94 76 1234 782. We’re here to help you achieve excellence in healthcare management.</p>
+        <p>For more information or to schedule an Appointment, please contact us at hopewellhospital@gmail.com or +94761234782. We’re here to help you achieve excellence in healthcare management.</p>
     </div>
 
     <?php include "./partials/footer.php"; ?>

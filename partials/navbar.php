@@ -23,9 +23,9 @@
                     <a href="users.php">Users</a>
                     <a href="signout.php" class="primary-btn">Sign out</a>
                 </div>
-        <?php
+                <?php
             } else {
-        ?>
+                ?>
                 <div class="nav-links">
                     <a href="index.php">Home</a>
                     <a href="contact.php">Contact</a>
