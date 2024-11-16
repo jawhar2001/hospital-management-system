@@ -26,7 +26,7 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
         <h1 style="display: block; margin-bottom: 30px;">Users</h1>
 
         <div>
-            <table>
+            <table id="table">
                 <tr>
                     <th>Id</th>
                     <th>First Name</th>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
                             <td><?= $row['role']; ?></td>
                             <td>
                                 <!-- <button id="deleteBtn" onclick="deleteUser(<?= $row['id']; ?>)">Delete</button> -->
-                                <button id="deleteBtn" onclick="createModal()">Delete</button>
+                                <button id="deleteBtn" onclick="openModal(<?= $row['id']; ?>)">Delete</button>
                                 <button>Update</button>
                             </td>
                         </tr>
@@ -79,28 +79,71 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 'admin') {
     <?php include "./partials/footer.php"; ?>
 
     <script>
-        const modal = document.querySelector(".modal")
+        let modal;
+        let currentUserId;
+        let tableNode;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            modal = document.getElementById("modal")
+            tableNode = document.getElementById("table")
+
+        })
 
         function closeModal() {
+            modal.style.display = "none"
         }
 
-        function openModal() {
-
+        function openModal(userId) {
+            modal.style.display = "block"
+            currentUserId = userId
         }
+
+        function confirmDelete() {
+            closeModal()
+            deleteUser(currentUserId)
+
+            const allUsers = Array.from(document.querySelectorAll('table tr'))
+
+            const filteredUsers = allUsers.filter(userNode => {
+                const id = Array.from(userNode.children)[0].innerText
+                return id != currentUserId;
+            })
+
+            const frag = document.createDocumentFragment();
+            filteredUsers.forEach(userRow => frag.appendChild(userRow));
+
+            tableNode.innerText = "";
+            tableNode.appendChild(frag)
+        }
+
+
 
         function deleteUser(id) {
-            fetch(`delete-user.php?id=${id}`).then(console.log(res)).catch(console.log)
+            fetch(`delete-user.php?id=${id}`).then(console.log).catch(console.log)
         }
     </script>
 
-    <div class="modal">
+    <div class="modal" id="modal">
         <div class="overlay"></div>
         <div class="content">
             <h3>Are you sure you want to delete this user ?</h3>
 
             <div>
-                <button>Cancel</button>
-                <button style="background-color: red; color: white;">Confirm</button>
+                <button onclick="closeModal()">Cancel</button>
+                <button style="background-color: red; color: white;" onclick="confirmDelete()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="updateModal" id="updateModal">
+        <div class="overlay"></div>
+        <div class="content">
+            <h3>Are you sure you want to delete this user ?</h3>
+
+            <div>
+                <button onclick="closeModal()">Cancel</button>
+                <button style="background-color: red; color: white;" onclick="confirmDelete()">Confirm</button>
             </div>
         </div>
     </div>
