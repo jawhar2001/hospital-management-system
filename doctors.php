@@ -37,7 +37,7 @@ if (!isset($_SESSION['email'])) {
 
                 <?php
 
-                $query = "SELECT * FROM doctors";
+                $query = "SELECT * FROM doctors ORDER BY specialty ASC";
 
                 $result = mysqli_query($conn, $query);
 
